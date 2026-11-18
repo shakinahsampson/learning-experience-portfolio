@@ -2,13 +2,13 @@ import { useSearchParams } from 'react-router-dom'
 import { Container, PageHeader, SimNotice } from '../components/ui'
 import { CoursePlayer } from '../course/CoursePlayer'
 import { elevate } from '../course/content/elevate'
-import { LaunchpadSim } from '../lab/LaunchpadSim'
+import { launchpad } from '../course/content/launchpad'
 import { CoachForward } from '../lab/CoachForward'
 import { Insight360 } from '../lab/Insight360'
 
 const demos = [
   { id: 'elevate', label: 'ELEVATE', desc: 'Five-module guided course: scenarios, worked examples, practice, final assessment', C: () => <CoursePlayer course={elevate} /> },
-  { id: 'launchpad', label: 'LAUNCHPAD', desc: 'Platform workflow simulation and troubleshooting', C: LaunchpadSim },
+  { id: 'launchpad', label: 'LAUNCHPAD', desc: 'FlowBoard software simulation: guided and independent practice', C: () => <CoursePlayer course={launchpad} /> },
   { id: 'coachforward', label: 'COACHFORWARD', desc: 'Branching feedback-conversation scenario', C: CoachForward },
   { id: 'insight360', label: 'INSIGHT360', desc: 'Learning analytics dashboard with filters', C: Insight360 },
 ] as const
