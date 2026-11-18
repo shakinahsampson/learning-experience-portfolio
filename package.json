@@ -1,0 +1,37 @@
+{
+  "name": "learning-experience-portfolio",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "gen:data": "node scripts/generate-data.mjs",
+    "qa:links": "node scripts/check-links.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shakinahsampson/learning-experience-portfolio.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/shakinahsampson/learning-experience-portfolio/issues"
+  },
+  "homepage": "https://github.com/shakinahsampson/learning-experience-portfolio#readme",
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  },
+  "private": true
+}

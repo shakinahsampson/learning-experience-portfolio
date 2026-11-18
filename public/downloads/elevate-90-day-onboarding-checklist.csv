@@ -1,0 +1,20 @@
+phase,owner_role,task,due,evidence_of_completion
+Preboarding,HR/People Ops,Send welcome email and first-day logistics,T-7 days,Email sent
+Preboarding,IT,Provision laptop and accounts,T-3 days,Access confirmed
+Preboarding,Manager,Assign onboarding buddy,T-5 days,Buddy named in plan
+Preboarding,New hire,Complete e-forms and security acknowledgement,T-2 days,Forms submitted
+Day 1,Manager,Welcome meeting and 90-day plan walk-through,Day 1,Plan reviewed
+Day 1,New hire,Complete orientation module 1 (How we work),Day 1,Module completed
+Day 1,Buddy,Team introductions and tool tour,Day 1,Introductions done
+Week 1,Manager,Clarify role expectations and success measures,Day 3,Expectations doc signed off
+Week 1,New hire,Shadow two client-prep sessions,Day 5,Reflection note
+Week 1,L&D,Facilitate orientation workshop,Day 4,Attendance recorded
+Days 8-30,Manager,Weekly 1:1 check-in (use check-in guide),Weekly,Notes logged
+Days 8-30,New hire,Complete Elevate learning module lessons 1-3,Day 30,Knowledge checks passed
+Days 8-30,L&D,Send 30-day pulse survey,Day 30,Survey responses
+Days 31-60,New hire,Lead one internal work product with feedback,Day 55,Feedback captured
+Days 31-60,Manager,Mid-point performance conversation,Day 45,Goals updated
+Days 31-60,Buddy,Cross-team networking sessions (2),Day 60,Sessions held
+Days 61-90,New hire,Complete final assessment,Day 80,Score recorded
+Days 61-90,Manager,90-day performance review,Day 88,Review documented
+Days 61-90,L&D,Run Level 1-3 evaluation and debrief with stakeholders,Day 90,Evaluation summary

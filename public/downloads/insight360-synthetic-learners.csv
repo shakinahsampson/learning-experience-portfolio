@@ -1,0 +1,73 @@
+learner_id,program,cohort,role,delivery_mode,enrolled,completed,participation_pct,pre_score,post_score,satisfaction_1_5,manager_observed_application
+SYN-001,New Manager Foundations,2025-Q1-A,People Manager,In person,Yes,Yes,92,56,88,4,Yes
+SYN-002,New Manager Foundations,2025-Q1-B,Senior Consultant,Virtual,Yes,Yes,67,51,69,4,Not yet
+SYN-003,New Manager Foundations,2025-Q2-A,Analyst,Blended,Yes,Yes,89,69,100,4,Not yet
+SYN-004,New Manager Foundations,2025-Q2-B,Consultant,Blended,Yes,Yes,72,66,96,3,Yes
+SYN-005,New Manager Foundations,2025-Q3-A,Analyst,In person,Yes,Yes,88,49,81,5,Not yet
+SYN-006,New Manager Foundations,2025-Q3-B,Operations Associate,Virtual,Yes,Yes,77,49,70,4,Yes
+SYN-007,Platform Adoption Sprint,2025-Q1-A,Operations Associate,In person,Yes,Yes,95,57,83,3,Yes
+SYN-008,Platform Adoption Sprint,2025-Q1-B,Operations Associate,Blended,Yes,Yes,85,49,77,3,Not yet
+SYN-009,Platform Adoption Sprint,2025-Q2-A,People Manager,Blended,Yes,Yes,68,69,90,4,Not yet
+SYN-010,Platform Adoption Sprint,2025-Q2-B,Analyst,Blended,Yes,Yes,92,70,99,4,Yes
+SYN-011,Platform Adoption Sprint,2025-Q3-A,Senior Consultant,Blended,Yes,Yes,98,65,98,4,Yes
+SYN-012,Platform Adoption Sprint,2025-Q3-B,Analyst,Virtual,Yes,Yes,100,67,99,4,Yes
+SYN-013,Consulting Onboarding Pathway,2025-Q1-A,Operations Associate,In person,Yes,Yes,69,60,87,3,Not yet
+SYN-014,Consulting Onboarding Pathway,2025-Q1-B,Analyst,In person,Yes,Yes,58,52,,4,Not yet
+SYN-015,Consulting Onboarding Pathway,2025-Q2-A,Consultant,Virtual,Yes,Yes,71,53,77,4,Yes
+SYN-016,Consulting Onboarding Pathway,2025-Q2-B,Operations Associate,Blended,Yes,Yes,83,60,83,5,Yes
+SYN-017,Consulting Onboarding Pathway,2025-Q3-A,Senior Consultant,Virtual,Yes,Yes,66,59,89,4,Not yet
+SYN-018,Consulting Onboarding Pathway,2025-Q3-B,Senior Consultant,In person,Yes,Yes,77,64,83,5,Yes
+SYN-019,New Manager Foundations,2025-Q1-A,Analyst,In person,Yes,Yes,65,51,72,4,Not yet
+SYN-020,New Manager Foundations,2025-Q1-B,Consultant,In person,Yes,Yes,67,68,90,5,Not yet
+SYN-021,New Manager Foundations,2025-Q2-A,Analyst,Blended,Yes,Yes,67,50,74,3,Yes
+SYN-022,New Manager Foundations,2025-Q2-B,Analyst,Blended,Yes,Yes,63,63,94,3,Not yet
+SYN-023,New Manager Foundations,2025-Q3-A,Operations Associate,In person,Yes,No,75,62,,,
+SYN-024,New Manager Foundations,2025-Q3-B,Operations Associate,In person,Yes,Yes,92,56,77,4,Yes
+SYN-025,Platform Adoption Sprint,2025-Q1-A,Operations Associate,Virtual,Yes,Yes,78,49,74,4,Yes
+SYN-026,Platform Adoption Sprint,2025-Q1-B,Senior Consultant,Virtual,Yes,Yes,75,52,78,4,Yes
+SYN-027,Platform Adoption Sprint,2025-Q2-A,People Manager,Blended,Yes,Yes,82,63,93,4,Yes
+SYN-028,Platform Adoption Sprint,2025-Q2-B,Senior Consultant,Blended,Yes,Yes,82,58,73,4,Not yet
+SYN-029,Platform Adoption Sprint,2025-Q3-A,Operations Associate,Blended,Yes,Yes,98,55,76,3,Not yet
+SYN-030,Platform Adoption Sprint,2025-Q3-B,Senior Consultant,Virtual,Yes,Yes,86,54,73,4,Not yet
+SYN-031,Consulting Onboarding Pathway,2025-Q1-A,Analyst,Blended,Yes,Yes,87,72,100,4,Not yet
+SYN-032,Consulting Onboarding Pathway,2025-Q1-B,Analyst,Virtual,Yes,No,75,48,,,
+SYN-033,Consulting Onboarding Pathway,2025-Q2-A,People Manager,Virtual,Yes,Yes,97,57,82,4,Not yet
+SYN-034,Consulting Onboarding Pathway,2025-Q2-B,Operations Associate,Blended,Yes,Yes,83,70,88,3,Yes
+SYN-035,Consulting Onboarding Pathway,2025-Q3-A,Consultant,In person,Yes,No,77,57,,,
+SYN-036,Consulting Onboarding Pathway,2025-Q3-B,Consultant,Virtual,Yes,Yes,73,56,89,5,Not yet
+SYN-037,New Manager Foundations,2025-Q1-A,People Manager,Virtual,Yes,Yes,76,61,89,3,Yes
+SYN-038,New Manager Foundations,2025-Q1-B,Operations Associate,Virtual,Yes,Yes,83,67,99,4,Not yet
+SYN-039,New Manager Foundations,2025-Q2-A,People Manager,In person,Yes,Yes,98,48,76,3,Yes
+SYN-040,New Manager Foundations,2025-Q2-B,Senior Consultant,Virtual,Yes,Yes,76,49,74,4,Not yet
+SYN-041,New Manager Foundations,2025-Q3-A,Senior Consultant,In person,Yes,Yes,130,48,77,4,Yes
+SYN-042,New Manager Foundations,2025-Q3-B,Senior Consultant,Virtual,Yes,Yes,89,60,95,5,Not yet
+SYN-043,Platform Adoption Sprint,2025-Q1-A,Operations Associate,Blended,Yes,Yes,68,57,84,4,Yes
+SYN-044,Platform Adoption Sprint,2025-Q1-B,Analyst,In person,Yes,Yes,91,63,90,3,Yes
+SYN-045,Platform Adoption Sprint,2025-Q2-A,Operations Associate,In person,Yes,Yes,80,69,100,4,Not yet
+SYN-046,Platform Adoption Sprint,2025-Q2-B,Senior Consultant,Blended,Yes,Yes,89,65,99,4,Yes
+SYN-047,Platform Adoption Sprint,2025-Q3-A,Senior Consultant,Blended,Yes,Yes,80,70,100,3,Yes
+SYN-048,Platform Adoption Sprint,2025-Q3-B,Analyst,In person,Yes,Yes,80,60,95,4,Not yet
+SYN-049,Consulting Onboarding Pathway,2025-Q1-A,Senior Consultant,Virtual,Yes,Yes,92,57,75,4,Not yet
+SYN-050,Consulting Onboarding Pathway,2025-Q1-B,Analyst,In person,Yes,Yes,81,53,79,4,Yes
+SYN-051,Consulting Onboarding Pathway,2025-Q2-A,Senior Consultant,In person,Yes,No,89,61,,,
+SYN-052,Consulting Onboarding Pathway,2025-Q2-B,Consultant,In person,Yes,Yes,98,54,85,4,Yes
+SYN-053,Consulting Onboarding Pathway,2025-Q3-A,People Manager,In person,Yes,Yes,78,56,83,5,Not yet
+SYN-054,Consulting Onboarding Pathway,2025-Q3-B,Consultant,Virtual,Yes,No,87,60,,,
+SYN-055,New Manager Foundations,2025-Q1-A,Analyst,Virtual,Yes,Yes,79,70,88,4,Not yet
+SYN-055,New Manager Foundations,2025-Q1-B,Analyst,Blended,Yes,Yes,82,55,80,4,Yes
+SYN-057,New Manager Foundations,2025-Q2-A,People Manager,Blended,Yes,Yes,84,50,69,5,Not yet
+SYN-058,New Manager Foundations,2025-Q2-B,Analyst,In person,Yes,No,94,56,,,
+SYN-059,New Manager Foundations,2025-Q3-A,People Manager,Virtual,Yes,Yes,96,49,76,4,Not yet
+SYN-060,New Manager Foundations,2025-Q3-B,Analyst,Virtual,Yes,Yes,90,53,86,4,Yes
+SYN-061,Platform Adoption Sprint,2025-Q1-A,Operations Associate,In person,Yes,Yes,79,65,82,4,Not yet
+SYN-062,Platform Adoption Sprint,2025-Q1-B,Operations Associate,Blended,Yes,Yes,63,65,86,3,Not yet
+SYN-063,Platform Adoption Sprint,2025-Q2-A,Analyst,Virtual,Yes,Yes,61,58,76,5,Yes
+SYN-064,Platform Adoption Sprint,2025-Q2-B,Operations Associate,Blended,Yes,Yes,85,70,86,5,Not yet
+SYN-065,Platform Adoption Sprint,2025-Q3-A,Senior Consultant,Blended,Yes,Yes,66,67,86,4,Yes
+SYN-066,Platform Adoption Sprint,2025-Q3-B,Operations Associate,In person,Yes,Yes,98,55,90,4,Yes
+SYN-067,Consulting Onboarding Pathway,2025-Q1-A,Senior Consultant,Blended,Yes,Yes,74,54,82,5,Yes
+SYN-068,Consulting Onboarding Pathway,2025-Q1-B,Consultant,In person,Yes,Yes,67,69,99,4,Not yet
+SYN-069,Consulting Onboarding Pathway,2025-Q2-A,Consultant,In person,Yes,Yes,66,55,81,4,Yes
+SYN-070,Consulting Onboarding Pathway,2025-Q2-B,Operations Associate,Blended,Yes,Yes,63,53,77,4,Yes
+SYN-071,Consulting Onboarding Pathway,2025-Q3-A,Senior Consultant,Virtual,Yes,Yes,98,60,85,4,Yes
+SYN-072,Consulting Onboarding Pathway,2025-Q3-B,Senior Consultant,Blended,Yes,Yes,96,57,90,5,Not yet

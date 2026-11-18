@@ -1,0 +1,11 @@
+phase,milestone,activity,owner,start_week,end_week,deliverable,status
+Analyze,M1,Stakeholder interviews and needs analysis,Learning designer,1,2,Needs analysis summary,Not started
+Analyze,M1,Audience and context profile,Learning designer,1,2,Learner personas,Not started
+Design,M2,Write measurable objectives and assessment blueprint,Learning designer,3,3,Objectives and assessment map,Not started
+Design,M2,Storyboard and prototype key scenarios,Learning designer,3,4,Storyboard,Not started
+Develop,M3,Build module and job aids,Learning designer,5,7,Working prototype,Not started
+Develop,M3,SME review and accessibility check,SME / Learning designer,7,8,Reviewed build,Not started
+Implement,M4,Pilot with small group,Facilitator,9,9,Pilot feedback,Not started
+Implement,M4,Launch communications and manager briefing,Learning ops,10,10,Comms sent,Not started
+Evaluate,M5,Level 1-2 data review,Learning designer,11,11,Evaluation summary,Not started
+Evaluate,M5,Retrospective and iteration plan,Team,12,12,Improvement backlog,Not started
