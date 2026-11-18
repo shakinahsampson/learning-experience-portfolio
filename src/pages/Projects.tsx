@@ -7,7 +7,7 @@ export default function Projects() {
   const shown = PROJECTS.filter((p) => filter === 'All' || p.categories.includes(filter))
   return (
     <>
-      <PageHeader eyebrow="Projects" title="Case-study gallery" lead="Four independent, simulated projects. Filter by category." />
+      <PageHeader eyebrow="Projects" title="Case-study gallery" lead="Four independent fictional simulations, each with a business challenge, audience, deliverables and a working interactive demo. Filter by category." />
       <Container className="pb-4">
         <div role="group" aria-label="Filter projects by category" className="flex flex-wrap gap-2">
           {(['All', ...CATEGORIES] as const).map((c) => (
@@ -18,7 +18,7 @@ export default function Projects() {
         {shown.length === 0 ? (
           <p className="card mt-6">No projects in this category yet. <button className="underline" onClick={() => setFilter('All')}>Show all</button></p>
         ) : (
-          <div className="mt-6 grid gap-6 md:grid-cols-2">{shown.map((p) => <ProjectCard key={p.slug} slug={p.slug} />)}</div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">{shown.map((p) => <ProjectCard key={p.slug} slug={p.slug} detailed />)}</div>
         )}
         <div className="mt-8"><SimNotice /></div>
       </Container>
