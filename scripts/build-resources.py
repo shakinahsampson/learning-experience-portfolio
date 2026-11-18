@@ -31,7 +31,7 @@ def pdf(fname, title, subtitle, spec, compact=False):
     body = ParagraphStyle('b', fontName='Helvetica', fontSize=fs, leading=ld, textColor=CHAR, spaceAfter=3 if compact else 5)
     h1 = ParagraphStyle('h1', fontName='Times-Bold', fontSize=22 if not compact else 17, leading=26 if not compact else 20, textColor=SAGE9)
     sub = ParagraphStyle('s', fontName='Times-Italic', fontSize=11 if not compact else 9.5, leading=14, textColor=WARM, spaceAfter=4)
-    h2 = ParagraphStyle('h2', fontName='Times-Bold', fontSize=14 if not compact else 11.5, leading=17 if not compact else 13, textColor=SAGE9, spaceBefore=8 if not compact else 5, spaceAfter=3)
+    h2 = ParagraphStyle('h2', fontName='Times-Bold', fontSize=14 if not compact else 11.5, leading=17 if not compact else 13, textColor=SAGE9, spaceBefore=8 if not compact else 5, spaceAfter=3, keepWithNext=1)
     cell = ParagraphStyle('c', parent=body, fontSize=fs - 0.8, leading=(fs - 0.8) * 1.28, spaceAfter=0)
     cellh = ParagraphStyle('ch', parent=cell, fontName='Helvetica-Bold', textColor=colors.white)
     m = 0.55 * inch if compact else 0.8 * inch

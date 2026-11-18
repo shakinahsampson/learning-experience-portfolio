@@ -8,14 +8,27 @@ Interactive portfolio for **Learning Experience Designer | Learning & Developmen
 
 | Section | Content |
 |---|---|
-| Home | Hero, summary, featured projects, capabilities, credentials, contact |
-| About | Career narrative translating teaching, curriculum, facilitation, onboarding/tech support, and learning analytics into L&D capabilities |
-| Projects | Filterable gallery by category + four full case studies |
-| Learning Lab | Working demos: ELEVATE module and synthetic dashboard, LAUNCHPAD simulation, COACHFORWARD branching scenario, INSIGHT360 analytics dashboard |
-| Toolkit | Downloadable templates, checklists, guides, job aids, CSV data |
+| Home | Value-proposition hero, three capability highlights, four case-study previews, CTAs to projects, courses and downloads |
+| About | Career narrative, transferable skills, evidence-based practice, verified credentials (MAT, PSPO I) and stated boundaries |
+| Projects | Category filter, preview cards, and four full case studies (challenge, gap, needs, objectives, strategy, rationale, tools, assessment, implementation, evaluation, completed vs. proposed, limitations, future) |
+| Learning Lab | Four multi-screen course players (below) |
+| Toolkit | Polished PDF/DOCX/XLSX resources plus plain-text and CSV files |
 | Contact | Email and portfolio links |
 
-Case studies: **ELEVATE** (90-day onboarding), **LAUNCHPAD** (digital adoption), **COACHFORWARD** (manager feedback), **INSIGHT360** (learning analytics, 72 synthetic learner records).
+### Courses (all independent fictional simulations)
+
+Each lesson follows: scenario, instruction, worked example, guided practice (hints), independent practice, scenario knowledge check, consequence feedback with retry, and reinforcement/job aid. Each course has a separate final assessment (pass mark 75%) and a completion summary. Progress is saved only in the browser (`localStorage`), with a reset control.
+
+- **ELEVATE**: 90-day consulting onboarding at the fictional Meridian Strategy Group (Jordan, Maya, Alex, Priya); five modules including an integrated readiness capstone.
+- **LAUNCHPAD**: FlowBoard (fictional software) simulation covering status, blockers, ownership, dependencies, risk escalation and status updates; guided and independent projects.
+- **COACHFORWARD**: branching manager conversations using Situation-Behavior-Impact-Ask/Agree.
+- **INSIGHT360**: analytics reasoning on the synthetic dataset; every figure is computed from the data.
+
+Rubric checks for written drafts are keyword self-checks, not a real grader; the UI says so.
+
+## Regenerating downloadable resources
+
+`scripts/build-resources.py` builds the branded PDFs (reportlab), Word templates (python-docx) and the project-management workbook (openpyxl) into `public/downloads/`. Install with `pip install reportlab python-docx openpyxl pypdf`, run `python3 scripts/build-resources.py`, then `npm run qa:links`. The workbook has formulas, drop-downs and conditional formatting; its status date is the input cell `Summary!B3`. Generated files are committed.
 
 ## Run locally
 
@@ -24,7 +37,7 @@ Requires Node 20+.
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # unit tests (analytics logic + dataset checks)
+npm test           # unit and component tests (vitest, jsdom)
 npm run build      # typecheck + production build to dist/
 npm run preview    # serve dist/ locally
 npm run qa:links   # verify every referenced download exists (run after build)
@@ -50,7 +63,10 @@ scripts/check-links.mjs        QA: referenced downloads exist in public/ and dis
 src/data/projects.ts           Case-study content (all four projects)
 src/data/learners.json         Synthetic dataset (JSON copy used by tests)
 src/lib/                       storage (localStorage), analytics (metrics, CSV), tests
-src/lab/                       Quiz, Branching engine, Charts, and the four demos
+src/course/                    Course player, activities, scoring; content/ holds the four courses
+src/lab/                       FlowBoard simulation, INSIGHT360 explorer, charts (older demo files remain, unused)
+src/data/caseExtras.ts         Extended case-study sections
+scripts/build-resources.py     Generates PDFs, DOCX, XLSX
 src/pages/, src/components/    Routes and shared UI
 QA.md                          Manual QA checklist
 ```
