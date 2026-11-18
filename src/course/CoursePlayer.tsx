@@ -13,7 +13,7 @@ const kindLabel: Record<Step['kind'], string> = {
   independent: 'Independent practice', check: 'Knowledge check', consequence: 'Feedback & consequences', reinforce: 'Apply it',
 }
 const isActivity = (s: Step): s is ActivityStep => s.kind === 'guided' || s.kind === 'independent' || s.kind === 'check'
-const tone = { sage: 'bg-sage-700 text-white', gold: 'bg-gold text-white', charcoal: 'bg-charcoal text-white', warm: 'bg-warm-600 text-white' }
+const tone = { sage: 'bg-sage-700 text-white', gold: 'bg-gold-soft text-charcoal', charcoal: 'bg-charcoal text-white', warm: 'bg-warm-600 text-white' }
 
 export function CoursePlayer({ course }: { course: Course }) {
   const [state, setState] = usePersisted<CourseState>(`course:${course.id}`, emptyState())
