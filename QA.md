@@ -1,30 +1,41 @@
-# QA Checklist
+# QA Report
 
-Automated: `npm test`, `npm run build` (typecheck), `npm run qa:links`.
+## Automated checks (executed)
 
-## Functional
-- [ ] Navigation (desktop and mobile menu) reaches all six pages; deep link `#/projects/elevate` works on refresh.
-- [ ] Projects filter: each category shows the right projects; "All" resets; counts announce.
-- [ ] ELEVATE: lessons expand, knowledge checks score and give per-option feedback, retry works, progress bar updates and persists after reload, Reset clears it.
-- [ ] ELEVATE: scenario shows reaction + coaching, reaches end screen, retry restarts; final assessment target 80%.
-- [ ] ELEVATE dashboard: labeled synthetic; "View as table" opens for each chart.
-- [ ] LAUNCHPAD: each of the four tasks rejects wrong input with guidance and accepts right input; hints toggle; troubleshooting branches; job aid downloads.
-- [ ] COACHFORWARD: both opening branches reachable; retry; assessment; reflection saves and reloads.
-- [ ] INSIGHT360: loads CSV (loading state), filters update metrics/charts, empty state when no match, "Clear filters", filtered CSV downloads, data-quality list shows 3 issues. Stop the server/rename the CSV to confirm the error state and "Try again".
-- [ ] Toolkit: every download opens/saves.
+| Check | Result |
+|---|---|
+| `npx tsc --noEmit` | Clean |
+| `npm test` (vitest, 9 files) | 70 passed |
+| `npx vite build` | Succeeds; `base: './'`, HashRouter |
+| `npm run qa:links` | 23 download references exist |
 
-## Content integrity
-- [ ] Every case study, demo, and the footer label fictional organizations/data as simulated.
-- [ ] No claim of corporate HR experience, clients, awards, or real results.
-- [ ] Learning metrics are not presented as business outcomes or causation.
+Tests cover: scoring and pass mark, course navigation and gating, lesson progress, localStorage persistence, reset and cancel, knowledge-check feedback and retry, final-assessment mode, branching, INSIGHT360 explorer and data-quality hunt, FlowBoard goal checks, analytics calculations, project filtering, case-study sections, 404 routing, Home CTAs, and Toolkit file existence. Content-integrity tests check every course's structure.
 
-## Accessibility
-- [ ] Keyboard-only: all controls reachable, logical order, visible focus.
-- [ ] Skip link works; one `h1` per page; landmarks present.
-- [ ] Text contrast ≥ 4.5:1 (spot-check with browser devtools).
-- [ ] 200% zoom and 320px width: no horizontal page scroll (tables scroll inside their container).
-- [ ] `prefers-reduced-motion: reduce`: animations effectively off.
-- [ ] Screen reader: quiz feedback and status messages announce (role=status).
+## Browser checks (Playwright, Chromium, `vite preview`)
 
-## Deployment
-- [ ] Pages source set to GitHub Actions; workflow green; site loads under the repo sub-path; `/legacy/` still works.
+- Widths 1280, 768 and 390px on Home, About, Projects, four case studies, Lab, Toolkit, Contact: no horizontal overflow; one `h1` per page.
+- ELEVATE and COACHFORWARD: an automated walker completed every step through the final assessment to the completion summary. It picks the first option, so scores were low; it proves flow, not content quality.
+- INSIGHT360 and LAUNCHPAD custom activities (Explorer, QualityHunt, FlowBoard): covered by component and logic tests; **not** walked end to end in the browser.
+- Console: no errors on the pages visited. Focus outline measured as 3px solid gold on the course start button.
+- Contrast audit of text elements found gold eyebrow text at 3.27:1 and a gold avatar; both fixed. Other flagged items were false positives from background parsing.
+
+## Generated documents
+
+- PDFs were rendered to images and reviewed visually: consistent branding, no overlapping text. Page counts: LaunchPad 2, CoachForward 3, ELEVATE 3, Instructional Design 2, INSIGHT360 2. INSIGHT360 text shows 91.4% completion and pre/post 59.1 and 85.1 (n = 63), matching the dataset.
+- DOCX and XLSX were generated and loaded programmatically only.
+- **Workbook formulas were not recalculated** (no spreadsheet application available). Formulas, validations and conditional formatting were verified as present, not as computed.
+
+## Accessibility findings
+
+Implemented: skip link, landmarks, visible focus, labelled controls, live-region feedback, reduced-motion CSS, chart data tables, status shown in text as well as colour.
+
+## Not verified / outstanding manual checks
+
+- No screen-reader testing (NVDA, JAWS, VoiceOver); announcements are untested with assistive technology.
+- No full WCAG 2.2 AA audit; contrast was spot-checked programmatically only.
+- Reduced-motion was not exercised in the browser.
+- Generated PDFs are not guaranteed to be tagged or fully accessible; DOCX alt text not checked.
+- Full keyboard-only walkthrough of every course and the FlowBoard simulation.
+- Live GitHub Pages site not checked; the deployment workflow is unchanged and was not run.
+- Tablet and 390px checks were layout-overflow checks, not full usability tests on devices.
+- Older `src/lab/ElevateModule.tsx` and `Insight360.tsx` remain in the repo but are not shown in the Lab.

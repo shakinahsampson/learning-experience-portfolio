@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
-import { getProject } from '../data/projects'
+import { getProject, type Section } from '../data/projects'
+import { EXTRAS } from '../data/caseExtras'
 import { asset } from '../lib/storage'
 import { Container, SimBadge, SimNotice } from '../components/ui'
 
@@ -12,6 +13,21 @@ export default function ProjectDetail() {
         <p className="mt-3">That case study doesn’t exist. <Link className="underline" to="/projects">Back to projects</Link></p></Container>
     )
   }
+  const x = EXTRAS[p.slug]
+  const head: Section[] = [
+    { id: 'cs-overview', heading: 'Overview, challenge and performance gap', paragraphs: [p.summary, `Business challenge: ${x.challenge}`, `Performance gap: ${x.gap}`], bullets: [`Target audience: ${p.audience}`, 'Development tools: React, TypeScript, Vite and Tailwind CSS for the interactive course; Python (reportlab, openpyxl, python-docx) for the downloadable documents', `Skills demonstrated: ${x.skills.join(', ')}`] },
+    { id: 'cs-needs', heading: 'Needs analysis', paragraphs: ['This is a fictional needs analysis written for the simulation; it models the process rather than reporting real interviews.'], bullets: x.needs },
+    { id: 'cs-status', heading: 'Completed artifacts and proposed implementation', paragraphs: ['Completed items exist in this portfolio. Proposed items describe what would happen in a real organization and have not been carried out.'], tables: [{ caption: 'Completed versus proposed', head: ['Completed portfolio artifacts', 'Proposed organizational implementation'], rows: Array.from({ length: Math.max(x.completed.length, x.proposed.length) }, (_, i) => [x.completed[i] ?? '', x.proposed[i] ?? '']) }] },
+    { id: 'cs-rationale', heading: 'Instructional strategy and design rationale', tables: [{ caption: 'Design decisions and why they were made', head: ['Decision', 'Why', 'Framework'], rows: x.strategy.map((d) => [d.decision, d.why, d.framework]) }] },
+    { id: 'cs-assessment', heading: 'Assessment approach', bullets: x.assessment },
+    { id: 'cs-implementation', heading: 'Implementation plan (proposed, ADDIE)', tables: [{ caption: 'Proposed implementation by ADDIE phase', head: ['Phase', 'Activity'], rows: x.implementation.map((i) => [i.phase, i.activity]) }] },
+    { id: 'cs-evaluation', heading: 'Evaluation strategy (Kirkpatrick)', tables: [{ caption: 'Evaluation by Kirkpatrick level', head: ['Level', 'Question', 'Method', 'Status'], rows: x.evaluation.map((e) => [e.level, e.question, e.method, e.status]) }] },
+  ]
+  const tail: Section[] = [
+    { id: 'cs-limits', heading: 'Limitations', bullets: x.limitations },
+    { id: 'cs-reflection', heading: 'Reflection and future improvements', paragraphs: x.reflection, bullets: x.future },
+  ]
+  const sections = [...head, ...p.sections, ...tail]
   return (
     <Container className="py-14">
       <Link to="/projects" className="text-sm text-sage-700 underline">← All projects</Link>
@@ -33,16 +49,16 @@ export default function ProjectDetail() {
           <p className="eyebrow mb-2">On this page</p>
           <ul className="space-y-1">
             <li><a className="underline text-sage-700" href="#objectives">Learning objectives</a></li>
-            {p.sections.map((s) => <li key={s.id}><a className="underline text-sage-700" href={`#${s.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(s.id)?.scrollIntoView(); document.getElementById(s.id)?.focus() }}>{s.heading}</a></li>)}
+            {sections.map((s) => <li key={s.id}><a className="underline text-sage-700" href={`#${s.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(s.id)?.scrollIntoView(); document.getElementById(s.id)?.focus() }}>{s.heading}</a></li>)}
             <li><a className="underline text-sage-700" href="#resources" onClick={(e) => { e.preventDefault(); document.getElementById('resources')?.scrollIntoView() }}>Downloads</a></li>
           </ul>
         </nav>
         <article className="min-w-0">
           <section id="objectives" tabIndex={-1} className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl">Learning objectives</h2>
+            <h2 className="text-2xl">Measurable learning objectives</h2>
             <ul className="prose-l mt-3">{p.objectives.map((o) => <li key={o}>{o}</li>)}</ul>
           </section>
-          {p.sections.map((s) => (
+          {sections.map((s) => (
             <section key={s.id} id={s.id} tabIndex={-1} className="mb-12 scroll-mt-24 outline-none">
               <h2 className="text-2xl">{s.heading}</h2>
               <div className="prose-l mt-3">

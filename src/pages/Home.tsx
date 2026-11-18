@@ -10,25 +10,40 @@ const capabilities = [
   { t: 'Agile & product thinking', d: 'PSPO I certified: prioritizing by value, iterating from feedback, and keeping a clear backlog.' },
 ]
 
+const highlights = [
+  { t: 'Learning Design', d: 'Scenario-based courses built backward from the workplace behavior that must change.' },
+  { t: 'Learning Operations', d: 'Onboarding plans, RACI matrices, communications calendars, and workbooks that make programs run.' },
+  { t: 'Performance Measurement', d: 'Kirkpatrick-aligned evaluation and analytics that separate learning evidence from business results.' },
+]
+
 export default function Home() {
   return (
     <>
       <section className="bg-gradient-to-b from-sage-50 to-ivory">
-        <Container className="pt-20 pb-24">
+        <Container className="pt-14 pb-10">
           <p className="eyebrow">Learning &amp; Development Portfolio</p>
-          <h1 className="mt-4 max-w-4xl text-5xl md:text-6xl">Learning experiences that turn knowledge into confident action.</h1>
-          <p className="mt-6 max-w-2xl text-xl text-warm-600">
-            I’m <strong className="text-sage-900">Shakinah Sampson</strong> — Learning Experience Designer | Learning &amp; Development | Employee Enablement.
-            I bring a Master of Arts in Teaching, curriculum design, and facilitation experience to corporate learning.
+          <h1 className="mt-4 max-w-4xl text-5xl md:text-6xl">I design learning that improves how people perform at work.</h1>
+          <p className="mt-5 max-w-2xl text-xl text-warm-600">
+            I’m <strong className="text-sage-900">Shakinah Sampson</strong>: Learning Experience Designer | Learning &amp; Development | Employee Enablement.
+            A Master of Arts in Teaching, curriculum design, and facilitation experience, applied to onboarding, digital adoption, manager development, and learning analytics.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link to="/projects" className="btn btn-primary">Explore My Work</Link>
-            <Link to="/lab" className="btn btn-ghost">Try the Learning Lab</Link>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link to="/projects" className="btn btn-primary">Explore Projects</Link>
+            <Link to="/lab" className="btn btn-ghost">Experience a Course</Link>
+            <Link to="/toolkit" className="btn btn-ghost">Download Resources</Link>
           </div>
+          <ul className="mt-9 grid gap-4 md:grid-cols-3" aria-label="Capability highlights">
+            {highlights.map((h) => (
+              <li key={h.t} className="border-l-2 border-gold-soft pl-4">
+                <h2 className="text-lg">{h.t}</h2>
+                <p className="mt-1 text-sm text-warm-600">{h.d}</p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
-      <Container className="py-16">
+      <Container className="py-10">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="md:col-span-1">
             <p className="eyebrow">Professional summary</p>
@@ -36,14 +51,14 @@ export default function Home() {
           </div>
           <div className="md:col-span-2 prose-l text-lg">
             <p>I have taught English, designed curriculum, facilitated learning, supported colleagues with onboarding and learning technologies, and analyzed learning outcomes. I translate that practice into corporate L&amp;D: clear objectives, realistic practice, useful feedback, and evidence of what works.</p>
-            <p>The projects below are <strong>independent, simulated portfolio case studies</strong>. They show how I think and build; they are not client work, and I do not claim corporate HR experience.</p>
+            <p>The projects below are <strong>independent, fictional portfolio simulations</strong>. They show how I think and build; they are not client work, and I do not claim corporate HR experience.</p>
           </div>
         </div>
       </Container>
 
       <Container className="py-8">
         <p className="eyebrow">Featured projects</p>
-        <h2 className="mt-3 text-3xl">Four case studies, each with a working demo</h2>
+        <h2 className="mt-3 text-3xl">Four independent fictional case studies, each with a working course</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2"><ProjectCard slug="elevate" /><ProjectCard slug="launchpad" /><ProjectCard slug="coachforward" /><ProjectCard slug="insight360" /></div>
         <div className="mt-8"><SimNotice /></div>
       </Container>

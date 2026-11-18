@@ -27,6 +27,24 @@ export default function About() {
           <tbody>{translations.map(([a, b]) => <tr key={a}><th scope="row" className="font-semibold">{a}</th><td>{b}</td></tr>)}</tbody></table></div>
       </Container>
       <Container className="py-10">
+        <h2 className="text-3xl">Evidence-based practices I use</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          {[
+            ['Backward design', 'Define the observable performance first, then the evidence, then the activities. Every course here maps objectives to assessments.'],
+            ['Worked examples, then practice', 'Show expert reasoning, support the first attempt, then remove the support. This is the eight-step lesson sequence in the Learning Lab.'],
+            ['Retrieval and feedback', 'Knowledge checks explain why an answer works, and learners can retry. Feedback targets the decision, not just the score.'],
+            ['Kirkpatrick-aligned evaluation', 'Reaction, learning, behavior, and results are kept separate so that a completion rate is never presented as impact.'],
+          ].map(([t, d]) => <section key={t} className="card"><h3 className="text-lg">{t}</h3><p className="mt-2 text-sm text-warm-600">{d}</p></section>)}
+        </div>
+      </Container>
+      <Container className="py-10">
+        <h2 className="text-3xl">Credentials, and what this portfolio does not claim</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <section className="card"><h3 className="text-lg">Verified credentials</h3><ul className="prose-l mt-3"><li>Master of Arts in Teaching (MAT)</li><li>Professional Scrum Product Owner I (PSPO I)</li></ul></section>
+          <section className="card"><h3 className="text-lg">Boundaries</h3><ul className="prose-l mt-3"><li>The four projects are fictional simulations; no program was delivered to real corporate employees.</li><li>All data are synthetic and all outcomes are illustrative.</li><li>My teaching and colleague-support experience is educational, not corporate HR employment.</li></ul></section>
+        </div>
+      </Container>
+      <Container className="py-10">
         <h2 className="text-3xl">How I design</h2>
         <ul className="prose-l mt-4 text-lg">
           <li><strong>Start with performance.</strong> What must people do differently, and what evidence will show it?</li>

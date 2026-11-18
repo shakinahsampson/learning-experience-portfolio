@@ -26,7 +26,8 @@ h1, h2, h3 { font-family: var(--font-serif); letter-spacing: -0.01em; line-heigh
 :focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; border-radius: 4px; }
 
 @layer components {
-.eyebrow { font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--color-gold); }
+.eyebrow { font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #755b14; }
+.bg-sage-900 .eyebrow { color: var(--color-gold-soft); }
 .card { background: var(--color-paper); border: 1px solid var(--color-warm-200); border-radius: 14px; padding: 1.5rem; }
 .btn { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .7rem 1.4rem; font-weight: 600; font-size: .95rem; transition: background .2s, color .2s, transform .2s; cursor: pointer; border: 1px solid transparent; }
 .btn-primary { background: var(--color-sage-700); color: #fff; }
@@ -35,7 +36,7 @@ h1, h2, h3 { font-family: var(--font-serif); letter-spacing: -0.01em; line-heigh
 .btn-ghost:hover { background: var(--color-sage-100); }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .tag { display: inline-block; font-size: .72rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; background: var(--color-sage-100); color: var(--color-sage-900); }
-.sim-badge { display: inline-flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 700; padding: .25rem .7rem; border-radius: 6px; background: #f6ecd0; color: #5e4710; border: 1px solid var(--color-gold-soft); }
+.sim-badge { display: inline-flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; background: var(--color-paper); color: var(--color-warm-600); border: 1px solid var(--color-warm-200); }
 .prose-l p { margin-bottom: 1rem; max-width: 68ch; }
 .prose-l ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; max-width: 68ch; }
 .prose-l li { margin-bottom: .35rem; }
@@ -57,3 +58,6 @@ h1, h2, h3 { font-family: var(--font-serif); letter-spacing: -0.01em; line-heigh
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
 }
 @media print { header, footer, .no-print { display: none !important; } }
+.navbtn { display: block; width: 100%; text-align: left; padding: .5rem .65rem; border-radius: 8px; border: 1px solid transparent; cursor: pointer; }
+.navbtn:hover { background: var(--color-sage-50); }
+.navbtn.on { background: var(--color-sage-100); border-color: var(--color-sage-300); }
