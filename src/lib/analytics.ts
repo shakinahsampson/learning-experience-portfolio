@@ -110,3 +110,39 @@ export function parseLearnerCSV(text: string): Learner[] {
     } as unknown as Learner
   })
 }
+
+export function pearson(xs: number[], ys: number[]): number {
+  const n = xs.length
+  if (n < 3) return 0
+  const mx = avg(xs), my = avg(ys)
+  let num = 0, dx = 0, dy = 0
+  for (let i = 0; i < n; i++) { num += (xs[i] - mx) * (ys[i] - my); dx += (xs[i] - mx) ** 2; dy += (ys[i] - my) ** 2 }
+  return dx && dy ? Math.round((num / Math.sqrt(dx * dy)) * 100) / 100 : 0
+}
+
+/** Correlation between participation and score gain, using clean paired records only. */
+export function participationGainCorrelation(rows: Learner[]): { r: number; n: number } {
+  const clean = rows.filter((x) => x.post_score !== null && x.participation_pct <= 100)
+  return { r: pearson(clean.map((x) => x.participation_pct), clean.map((x) => (x.post_score as number) - x.pre_score)), n: clean.length }
+}
+
+export function groupSummary(rows: Learner[], key: 'delivery_mode' | 'program' | 'role' | 'cohort') {
+  return [...new Set(rows.map((r) => r[key]))].sort().map((g) => ({ group: g, ...summarize(rows.filter((r) => r[key] === g)) }))
+}
+
+export function satisfactionDistribution(rows: Learner[]): { score: number; count: number }[] {
+  return [1, 2, 3, 4, 5].map((s) => ({ score: s, count: rows.filter((r) => r.satisfaction_1_5 === s).length }))
+}
+
+export function themeCounts(rows: Learner[], themes: { learner_id: string; theme: string }[]) {
+  const ids = new Set(rows.map((r) => r.learner_id))
+  const m = new Map<string, number>()
+  for (const t of themes) if (ids.has(t.learner_id)) m.set(t.theme, (m.get(t.theme) ?? 0) + 1)
+  return [...m.entries()].map(([theme, count]) => ({ theme, count })).sort((a, b) => b.count - a.count)
+}
+
+/** De-duplicates by learner_id (first record wins) and drops out-of-range participation, as a documented cleaning step. */
+export function cleanRows(rows: Learner[]): Learner[] {
+  const seen = new Set<string>()
+  return rows.filter((r) => { if (seen.has(r.learner_id)) return false; seen.add(r.learner_id); return r.participation_pct <= 100 })
+}

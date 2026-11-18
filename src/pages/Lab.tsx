@@ -4,13 +4,13 @@ import { CoursePlayer } from '../course/CoursePlayer'
 import { elevate } from '../course/content/elevate'
 import { launchpad } from '../course/content/launchpad'
 import { coachforward } from '../course/content/coachforward'
-import { Insight360 } from '../lab/Insight360'
+import { insight360 } from '../course/content/insight360'
 
 const demos = [
   { id: 'elevate', label: 'ELEVATE', desc: 'Five-module guided course: scenarios, worked examples, practice, final assessment', C: () => <CoursePlayer course={elevate} /> },
   { id: 'launchpad', label: 'LAUNCHPAD', desc: 'FlowBoard software simulation: guided and independent practice', C: () => <CoursePlayer course={launchpad} /> },
   { id: 'coachforward', label: 'COACHFORWARD', desc: 'Branching feedback conversations with SBI–A', C: () => <CoursePlayer course={coachforward} /> },
-  { id: 'insight360', label: 'INSIGHT360', desc: 'Learning analytics dashboard with filters', C: Insight360 },
+  { id: 'insight360', label: 'INSIGHT360', desc: 'Analytics exercise: trends, data quality, executive summary', C: () => <CoursePlayer course={insight360} /> },
 ] as const
 
 export default function Lab() {

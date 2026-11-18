@@ -4,8 +4,9 @@ import { evaluateDraft } from '../scoring'
 import { elevate } from './elevate'
 import { launchpad } from './launchpad'
 import { coachforward } from './coachforward'
+import { insight360 } from './insight360'
 
-const courses: Course[] = [elevate, launchpad, coachforward]
+const courses: Course[] = [elevate, launchpad, coachforward, insight360]
 
 function activities(c: Course): { id: string; a: Activity }[] {
   const out: { id: string; a: Activity }[] = []
