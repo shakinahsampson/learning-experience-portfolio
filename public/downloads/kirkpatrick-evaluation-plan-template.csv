@@ -1,0 +1,5 @@
+level,question,measure,method,timing,owner,target_example
+1 Reaction,Was the experience relevant and usable?,Relevance and usefulness rating (1-5),Post-session survey,End of session,L&D,>= 4.0 average
+2 Learning,Did learners acquire the targeted knowledge and skills?,Pre/post assessment gain,Scenario-based assessment,Before and after,L&D,>= 15 point gain
+3 Behavior,Are learners applying skills on the job?,Observed behaviors checklist,Manager observation,30 and 60 days,Manager,>= 60% show behaviors
+4 Results,Did targeted business indicators move?,Pre-agreed business metric,Comparison with baseline or comparison group,Quarterly,Business owner,Define before launch; do not assume causation
